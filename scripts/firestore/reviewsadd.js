@@ -1,7 +1,7 @@
 // reviews-seeder.js
 // This script adds sample reviews to malls in your Firestore database
 
-import { db } from "./firebaseAdmin.js";
+import { db } from "../lib/firebaseAdmin.js";
 
 // Sample review templates to choose from
 const reviewTemplates = [

@@ -1,4 +1,4 @@
-import { db } from "./firebaseAdmin.js";
+import { db } from "../lib/firebaseAdmin.js";
 
 // 🔹 Function to copy user booking history to services
 const copyBookingsToServices = async () => {

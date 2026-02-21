@@ -1,4 +1,4 @@
-import { db } from "./firebaseAdmin.js";
+import { db } from "../lib/firebaseAdmin.js";
 
 async function addMalls() {
   try {

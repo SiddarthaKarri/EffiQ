@@ -44,7 +44,8 @@ It lets users book time slots, track queue position, manage profiles/bookings, a
 - `src/firebaseConfig.ts` — Firebase client config
 - `src/pages/*` — feature pages
 - `src/components/*` — reusable UI components
-- Root scripts like `addServices.js`, `migrateFirestore.js` — optional Firestore data setup/migration utilities
+- `scripts/firestore/*` — optional Firestore data setup/migration utilities
+- `scripts/lib/firebaseAdmin.js` — shared Firebase Admin initialization for scripts
 
 ---
 
@@ -137,27 +138,29 @@ After that user logs in, admin panel and analytics can load service data assigne
 
 ---
 
-## 8) Optional: Seed / Migration Scripts (Root .js files)
+## 8) Optional: Seed / Migration Scripts
 
-You have helper scripts such as:
-- `migrateFirestore.js`
-- `addServices.js`
-- `addBookings.js`
-- `newadd.js`
-- `peakadd.js`
-- `reviewsadd.js`
-- `7hills.js`
-- `struc.js`
+Scripts are organized under `scripts/firestore/`:
+- `scripts/firestore/migrateFirestore.js`
+- `scripts/firestore/addServices.js`
+- `scripts/firestore/addBookings.js`
+- `scripts/firestore/newadd.js`
+- `scripts/firestore/peakadd.js`
+- `scripts/firestore/reviewsadd.js`
+- `scripts/firestore/7hills.js`
+- `scripts/firestore/struc.js`
 
 These use **Firebase Admin SDK** and read credentials from environment variables:
 
 - `FIREBASE_SERVICE_ACCOUNT_PATH` (path to service account JSON file), or
 - `FIREBASE_SERVICE_ACCOUNT_JSON` (entire JSON content as one string)
 
-Run example:
+Run examples:
 
 ```bash
-node addServices.js
+npm run seed:services
+npm run db:migrate
+npm run db:structure
 ```
 
 > Important: never commit service account keys or `.env` files to Git.
@@ -170,6 +173,13 @@ node addServices.js
 - `npm run build` — production build
 - `npm run preview` — preview production build
 - `npm run lint` — run ESLint
+- `npm run seed:services` — seed service data
+- `npm run seed:bookings` — copy booking history data to service bookings
+- `npm run seed:reviews` — seed mall reviews
+- `npm run seed:malls` — seed malls and peak-hour data
+- `npm run seed:sevenhills` — seed Seven Hills sample data
+- `npm run db:migrate` — run Firestore migration script
+- `npm run db:structure` — print Firestore structure for inspection
 
 ---
 

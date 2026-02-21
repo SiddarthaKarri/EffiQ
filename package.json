@@ -7,7 +7,14 @@
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "seed:services": "node scripts/firestore/addServices.js",
+    "seed:bookings": "node scripts/firestore/addBookings.js",
+    "seed:reviews": "node scripts/firestore/reviewsadd.js",
+    "seed:malls": "node scripts/firestore/peakadd.js",
+    "seed:sevenhills": "node scripts/firestore/7hills.js",
+    "db:migrate": "node scripts/firestore/migrateFirestore.js",
+    "db:structure": "node scripts/firestore/struc.js"
   },
   "dependencies": {
     "dotenv": "^17.3.1",

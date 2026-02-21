@@ -1,4 +1,4 @@
-import { admin, db } from "./firebaseAdmin.js";
+import { admin, db } from "../lib/firebaseAdmin.js";
 
 async function migrateFirestore() {
   try {
