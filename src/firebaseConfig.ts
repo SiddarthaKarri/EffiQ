@@ -5,14 +5,14 @@ import { getFirestore } from "firebase/firestore";
 
 // Define Firebase configuration object type
 const firebaseConfig = {
-  apiKey: "AIzaSyBwxa1yFkA-WTPX1R_RZugfy18NwmRyuZM",
-  authDomain: "effiq-b3e50.firebaseapp.com",
-  databaseURL: "https://effiq-b3e50-default-rtdb.firebaseio.com",
-  projectId: "effiq-b3e50",
-  storageBucket: "effiq-b3e50.appspot.com",
-  messagingSenderId: "109863914318",
-  appId: "1:109863914318:web:03cf7f5c47088474952c1f",
-  measurementId: "G-F00CM6KDYW"
+  apiKey: "YOUR_API_KEY",
+  authDomain: "YOUR_AUTH_DOMAIN",
+  databaseURL: "YOUR_DATABASE_URL",
+  projectId: "YOUR_PROJECT_ID",
+  storageBucket: "YOUR_STORAGE_BUCKET",
+  messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
+  appId: "YOUR_APP_ID",
+  measurementId: "YOUR_MEASUREMENT_ID"
 };
 
 // Initialize Firebase
