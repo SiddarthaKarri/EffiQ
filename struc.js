@@ -1,21 +1,4 @@
-import admin from "firebase-admin";
-import fs from "fs";
-import { dirname } from "path";
-import { fileURLToPath } from "url";
-
-// Fix __dirname in ES modules
-const __dirname = dirname(fileURLToPath(import.meta.url));
-
-// Load Firebase Admin SDK
-const serviceAccount = JSON.parse(fs.readFileSync(__dirname + "/serviceAccountKey.json", "utf8"));
-
-if (!admin.apps.length) {
-  admin.initializeApp({
-    credential: admin.credential.cert(serviceAccount),
-  });
-}
-
-const db = admin.firestore();
+import { db } from "./firebaseAdmin.js";
 
 /**
  * Recursively fetch and print Firestore structure along with document data.

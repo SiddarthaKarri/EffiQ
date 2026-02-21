@@ -1,25 +1,7 @@
 // reviews-seeder.js
 // This script adds sample reviews to malls in your Firestore database
 
-import admin from "firebase-admin";
-import { collection, getDocs, addDoc } from "firebase/firestore";
-import fs from "fs";
-import { dirname } from "path";
-import { fileURLToPath } from "url";
-
-// Fix __dirname in ES modules
-const __dirname = dirname(fileURLToPath(import.meta.url));
-
-// Load Firebase Admin SDK
-const serviceAccount = JSON.parse(fs.readFileSync(__dirname + "/serviceAccountKey.json", "utf8"));
-
-if (!admin.apps.length) {
-  admin.initializeApp({
-    credential: admin.credential.cert(serviceAccount),
-  });
-}
-
-const db = admin.firestore();
+import { db } from "./firebaseAdmin.js";
 
 // Sample review templates to choose from
 const reviewTemplates = [

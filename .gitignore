@@ -24,3 +24,9 @@ dist-ssr
 *.sw?
 serviceAccountKey.json
 *.json
+.env
+.env.*
+!.env.example
+
+.bolt
+.bolt/*
